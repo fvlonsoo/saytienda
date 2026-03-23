@@ -311,65 +311,91 @@
         </div>
     </div>
 
-    <script>
-        function openProduct(product) {
-            let content = "";
-            let title = "";
-            let prices = "";
-            let details = "";
-            let images = [];
+   <script>
+function openProduct(product) {
+    let title = "";
+    let prices = "";
+    let details = "";
+    let images = [];
 
-            if (product == "blackred") {
-                title = "Jordan Retro 1 Black Red";
-                prices = "<s>$89.990</s> <b>$59.990</b>";
-                details = "Tallas 40 al 44 disponibles ✅";
-                images = ["blackred1.jpg", "blackred2.jpg", "blackred3.jpg", "blackred4.jpg"];
-            } else if (product == "gold") {
-                title = "Jordan Retro 1 Black White Gold";
-                prices = "<s>$89.990</s> <b>$69.990</b>";
-                details = "Tallas 40 al 44 disponibles ✅";
-                images = ["gold1.jpg", "gold2.jpg", "gold3.jpg", "gold4.jpg"];
-            } else if (product == "capandgown") {
-                title = "Jordan Retro 11 Cap And Gown";
-                prices = "<s>$119.990</s> <b>$79.990</b>";
-                details = "Todas las tallas disponibles del 35 al 44 ✅<br>Consulta tu medida en cm 📐";
-                images = ["capandgown1.jpg", "capandgown2.jpg", "capandgown3.jpg", "capandgown4.jpg", "capandgown5.jpg"];
-            } 
-            // Agrega los demás productos siguiendo este patrón...
-            else {
-                title = "Producto SayTienda";
-                prices = "Consulte precio";
-                details = "Tallas disponibles";
-                images = [product + "1.jpg"];
-            }
+    if (product == 'blackred') {
+        title = "Jordan Retro 1 Black Red";
+        prices = "<s>$89.990</s> <b style='color:#ff3333'>$59.990</b>";
+        details = "Tallas 40 al 44 disponibles ✅";
+        images = ["blackred1.jpg", "blackred2.jpg", "blackred3.jpg", "blackred4.jpg"];
+    } 
+    else if (product == 'gold') {
+        title = "Jordan Retro 1 Black White Gold";
+        prices = "<s>$89.990</s> <b style='color:#ff3333'>$69.990</b>";
+        details = "Tallas 40 al 44 disponibles ✅";
+        images = ["gold1.jpg", "gold2.jpg", "gold3.jpg", "gold4.jpg"];
+    }
+    else if (product == 'patent') {
+        title = "Jordan Retro 1 Patent Red";
+        prices = "<s>$89.990</s> <b style='color:#ff3333'>$59.990</b>";
+        details = "Tallas 40 al 44 disponibles ✅";
+        images = ["patent1.jpg", "patent2.jpg", "patent3.jpg", "patent4.jpg"];
+    }
+    else if (product == 'space') {
+        title = "Jordan Retro 1 Space Jam";
+        prices = "<s>$89.990</s> <b style='color:#ff3333'>$69.990</b>";
+        details = "Tallas 35 al 44.5 disponibles ✅";
+        images = ["space1.jpg", "space2.jpg", "space3.jpg", "space4.jpg", "space5.jpg"];
+    }
+    else if (product == 'capandgown') {
+        title = "Jordan Retro 11 Cap And Gown";
+        prices = "<s>$119.990</s> <b style='color:#ff3333'>$79.990</b>";
+        details = "Todas las tallas disponibles del 35 al 44 ✅";
+        images = ["capandgown1.jpg", "capandgown2.jpg", "capandgown3.jpg", "capandgown4.jpg", "capandgown5.jpg"];
+    }
+    else if (product == 'jubilee') {
+        title = "Jordan Retro 11 Jubilee";
+        prices = "<s>$89.990</s> <b style='color:#ff3333'>$79.990</b>";
+        details = "Tallas 40 al 44 disponibles ✅";
+        images = ["jubilee1.jpg", "jubilee2.jpg", "jubilee3.jpg", "jubilee4.jpg", "jubilee5.jpg"];
+    }
+    else if (product == 'velvetbred') {
+        title = "Jordan Retro 11 Velvet Bred";
+        prices = "<s>$119.990</s> <b style='color:#ff3333'>$79.990</b>";
+        details = "Todas las tallas disponibles del 35 al 44 ✅";
+        images = ["velvetbred1.jpg", "velvetbred2.jpg", "velvetbred3.jpg", "velvetbred4.jpg", "velvetbred5.jpg"];
+    }
+    else if (product == 'flintblue') {
+        title = "Jordan Retro 13 Flint Blue";
+        prices = "<s>$89.990</s> <b style='color:#ff3333'>$69.990</b>";
+        details = "Tallas 39 al 44 disponibles ✅";
+        images = ["flintblue1.jpg", "flintblue2.jpg", "flintblue3.jpg", "flintblue4.jpg"];
+    }
 
-            content = `
-                <div class="gallery">
-                    ${images.map(img => `<img src="${img}">`).join('')}
-                </div>
-                <h2>${title}</h2>
-                <p style="font-size:1.2rem">${prices}</p>
-                <p>${details}</p>
-                <button onclick="buy()">Comprar en Instagram</button>
-            `;
+    let content = `
+        <div class="gallery">
+            ${images.map(img => `<img src="${img}" onerror="this.src='https://via.placeholder.com/150?text=Subir+Imagen'">`).join('')}
+        </div>
+        <h2>${title}</h2>
+        <p style="font-size:1.2rem">${prices}</p>
+        <p>${details}</p>
+        <button onclick="buy()">Comprar en Instagram</button>
+    `;
 
-            document.getElementById("modal-content-inner").innerHTML = content;
-            document.getElementById("modal").style.display = "block";
-        }
+    document.getElementById("modal-content-inner").innerHTML = content;
+    document.getElementById("modal").style.display = "block";
+}
 
-        function closeModal() {
-            document.getElementById("modal").style.display = "none";
-        }
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
 
-        function buy() {
-            window.open("https://www.instagram.com/saytienda/");
-        }
+function buy() {
+    window.open("https://www.instagram.com/saytienda/");
+}
 
-        window.onclick = function(event) {
-            if (event.target == document.getElementById("modal")) {
-                closeModal();
-            }
-        }
-    </script>
+// Cerrar el modal al hacer clic fuera de la caja blanca
+window.onclick = function(event) {
+    let modal = document.getElementById("modal");
+    if (event.target == modal) {
+        closeModal();
+    }
+}
+</script>
 </body>
 </html>
