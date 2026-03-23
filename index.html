@@ -1,263 +1,367 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>SayTienda</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
-
-<style>
-:root{
---color-principal:#5ce1e6;
---color-secundario:#9b5cff;
-}
-
-body{
-background:#000;
-color:white;
-font-family:Arial,sans-serif;
-margin:0;
-}
-
-.navbar{
-position:relative;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:20px;
-}
-
-.logo{
-position:absolute;
-left:20px;
-top:50%;
-transform:translateY(-50%);
-height:60px;
-}
-
-.instagram-btn{
-position:absolute;
-right:20px;
-top:50%;
-transform:translateY(-50%);
-}
-
-.instagram-btn img{
-height:32px;
-transition:.2s;
-}
-
-.instagram-btn img:hover{
-transform:scale(1.1);
-}
-
-.header-text{
-text-align:center;
-}
-
-.titulo{
-font-size:32px;
-font-family:'Orbitron',sans-serif;
-letter-spacing:2px;
-background:linear-gradient(90deg,var(--color-principal),var(--color-secundario));
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.trust-bar{
-margin-top:10px;
-font-size:16px;
-}
-
-.trust-bar.small{
-font-size:14px;
-opacity:.8;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-padding:40px;
-}
-
-.card{
-background:#111;
-border-radius:12px;
-overflow:hidden;
-display:flex;
-flex-direction:column;
-}
-
-.card img{
-width:100%;
-height:260px;
-object-fit:cover;
-}
-
-.info{
-padding:15px;
-display:flex;
-flex-direction:column;
-flex-grow:1;
-}
-
-.old{
-text-decoration:line-through;
-color:gray;
-}
-
-.price{
-color:red;
-font-size:20px;
-font-weight:bold;
-}
-
-button{
-margin-top:auto;
-background:linear-gradient(90deg,#5ce1e6,#9b5cff);
-color:white;
-border:none;
-padding:12px;
-width:100%;
-cursor:pointer;
-border-radius:6px;
-}
-
-button:hover{
-opacity:.85;
-}
-
-.modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100vh;
-background:rgba(0,0,0,.8);
-}
-
-.modal-content{
-background:white;
-color:black;
-max-width:600px;
-margin:40px auto;
-padding:20px;
-border-radius:10px;
-}
-
-.close{
-float:right;
-font-size:25px;
-cursor:pointer;
-}
-
-</style>
-</head>
-
-<body>
-
-<header class="navbar">
-
-<img src="logo.png" class="logo">
-
-<a href="https://www.instagram.com/saytienda" target="_blank" class="instagram-btn">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-</a>
-
-<div class="header-text">
-
-<h1 class="titulo">SayTienda</h1>
-
-<div class="trust-bar">
-Desde 2018 · +1400 referencias en historias destacadas de Instagram
-</div>
-
-<div class="trust-bar small">
-Entrega presencial · Delivery paga al recibir · Envíos a todo Chile
-</div>
-
-</div>
-
-</header>
-
-
-<!-- CATALOGO -->
-
 <div class="grid">
 
-<!-- PRODUCTO 1 -->
-<div class="card">
-<img src="zapatilla1.jpg">
+
+<div class="card" onclick="openProduct('blackred')">
+
+<img src="blackred1.jpg">
+
 <div class="info">
-<h3>Nike Air Force 1</h3>
+
+<h3>Jordan Retro 1 Black Red</h3>
+
 <span class="old">$89.990</span>
-<span class="price">$59.990</span>
-<button onclick="abrirModal('modal1')">Ver detalles</button>
-</div>
+
+<div class="price">$59.990</div>
+
+<button>Ver producto</button>
+
 </div>
 
-<!-- PRODUCTO 2 -->
-<div class="card">
-<img src="zapatilla2.jpg">
+</div>
+
+
+<div class="card" onclick="openProduct('gold')">
+
+<img src="gold1.jpg">
+
 <div class="info">
-<h3>Adidas Campus</h3>
-<span class="old">$79.990</span>
-<span class="price">$54.990</span>
-<button onclick="abrirModal('modal2')">Ver detalles</button>
-</div>
+
+<h3>Jordan Retro 1 Black White Gold</h3>
+
+<span class="old">$89.990</span>
+
+<div class="price">$69.990</div>
+
+<button>Ver producto</button>
+
 </div>
 
-<!-- PRODUCTO 3 -->
-<div class="card">
-<img src="zapatilla3.jpg">
+</div>
+
+
+<div class="card" onclick="openProduct('patent')">
+
+<img src="patent1.jpg">
+
 <div class="info">
-<h3>Jordan 1 Low</h3>
-<span class="old">$109.990</span>
-<span class="price">$74.990</span>
-<button onclick="abrirModal('modal3')">Ver detalles</button>
-</div>
-</div>
+
+<h3>Jordan Retro 1 Patent Red</h3>
+
+<span class="old">$89.990</span>
+
+<div class="price">$59.990</div>
+
+<button>Ver producto</button>
 
 </div>
 
+</div>
 
-<!-- MODALES -->
 
-<div id="modal1" class="modal">
+<div class="card" onclick="openProduct('space')">
+
+<img src="space1.jpg">
+
+<div class="info">
+
+<h3>Jordan Retro 1 Space Jam</h3>
+
+<span class="old">$89.990</span>
+
+<div class="price">$69.990</div>
+
+<button>Ver producto</button>
+
+</div>
+
+</div>
+
+
+<div class="card" onclick="openProduct('capandgown')">
+<img src="capandgown1.jpg">
+
+<div class="info">
+<h3>Jordan Retro 11 Cap And Gown</h3>
+
+<p class="old-price">$119.990</p>
+<p class="price">$79.990</p>
+
+<button>Ver producto</button>
+</div>
+</div>
+
+
+<div class="card" onclick="openProduct('jubilee')">
+<img src="jubilee1.jpg">
+
+<div class="info">
+<h3>Jordan Retro 11 Jubilee</h3>
+
+<p class="old-price">$89.990</p>
+<p class="price">$79.990</p>
+
+<button>Ver producto</button>
+</div>
+</div>
+
+
+<div class="card" onclick="openProduct('velvetbred')">
+<img src="velvetbred1.jpg">
+
+<div class="info">
+<h3>Jordan Retro 11 Velvet Bred</h3>
+
+<p class="old-price">$119.990</p>
+<p class="price">$79.990</p>
+
+<button>Ver producto</button>
+</div>
+</div>
+
+
+<div class="card" onclick="openProduct('flintblue')">
+<img src="flintblue1.jpg">
+
+<div class="info">
+<h3>Jordan Retro 13 Flint Blue</h3>
+
+<p class="old-price">$89.990</p>
+<p class="price">$69.990</p>
+
+<button>Ver producto</button>
+</div>
+</div>
+
+<div id="modal" class="modal">
+
 <div class="modal-content">
-<span class="close" onclick="cerrarModal('modal1')">&times;</span>
-<h2>Nike Air Force 1</h2>
-<p>Tallas disponibles: 38 - 44</p>
-</div>
+
+<span class="close" onclick="closeModal()">×</span>
+
+<div id="modal-content"></div>
+
 </div>
 
-<div id="modal2" class="modal">
-<div class="modal-content">
-<span class="close" onclick="cerrarModal('modal2')">&times;</span>
-<h2>Adidas Campus</h2>
-<p>Tallas disponibles: 37 - 43</p>
-</div>
-</div>
-
-<div id="modal3" class="modal">
-<div class="modal-content">
-<span class="close" onclick="cerrarModal('modal3')">&times;</span>
-<h2>Jordan 1 Low</h2>
-<p>Tallas disponibles: 39 - 45</p>
-</div>
 </div>
 
 
 <script>
-function abrirModal(id){
-document.getElementById(id).style.display="block";
+
+function openProduct(product){
+
+let content=""
+
+if(product=="blackred"){
+
+content=`
+
+<div class="gallery">
+
+<img src="blackred1.jpg">
+<img src="blackred2.jpg">
+<img src="blackred3.jpg">
+<img src="blackred4.jpg">
+
+</div>
+
+<p>Tallas 40 al 44 disponibles</p>
+
+<button onclick="buy()">Comprar en Instagram</button>
+
+`
+
 }
 
-function cerrarModal(id){
-document.getElementById(id).style.display="none";
+
+if(product=="gold"){
+
+content=`
+
+<div class="gallery">
+
+<img src="gold1.jpg">
+<img src="gold2.jpg">
+<img src="gold3.jpg">
+<img src="gold4.jpg">
+
+</div>
+
+<p>Tallas 40 al 44 disponibles</p>
+
+<button onclick="buy()">Comprar en Instagram</button>
+
+`
+
 }
+
+
+if(product=="patent"){
+
+content=`
+
+<div class="gallery">
+
+<img src="patent1.jpg">
+<img src="patent2.jpg">
+<img src="patent3.jpg">
+<img src="patent4.jpg">
+
+</div>
+
+<p>Tallas 40 al 44 disponibles</p>
+
+<button onclick="buy()">Comprar en Instagram</button>
+
+`
+
+}
+
+
+if(product=="space"){
+
+content=`
+
+<div class="gallery">
+
+<img src="space1.jpg">
+<img src="space2.jpg">
+<img src="space3.jpg">
+<img src="space4.jpg">
+<img src="space5.jpg">
+
+</div>
+
+<p>Tallas 35 al 44.5 disponibles</p>
+
+<button onclick="buy()">Comprar en Instagram</button>
+
+`
+
+}
+
+    
+if(product === "capandgown") {
+
+content = `
+<div class="gallery">
+
+<img src="capandgown1.jpg">
+<img src="capandgown2.jpg">
+<img src="capandgown3.jpg">
+<img src="capandgown4.jpg">
+<img src="capandgown5.jpg">
+
+</div>
+
+<h2>Jordan Retro 11 Cap And Gown</h2>
+
+<p><s>$119.990</s> <b>$79.990</b></p>
+
+<p>
+Todas las tallas disponibles del 35 al 44 ✅<br>
+Consulta tu medida en cm 📐
+</p>
+`;
+}
+
+    
+if(product === "jubilee") {
+
+content = `
+<div class="gallery">
+
+<img src="jubilee1.jpg">
+<img src="jubilee2.jpg">
+<img src="jubilee3.jpg">
+<img src="jubilee4.jpg">
+<img src="jubilee5.jpg">
+
+</div>
+
+<h2>Jordan Retro 11 Jubilee</h2>
+
+<p><s>$89.990</s> <b>$79.990</b></p>
+
+<p>
+Todas las tallas disponibles del 40 al 44 ✅<br>
+Consulta tu medida en cm 📐
+</p>
+`;
+}
+
+    
+if(product === "velvetbred") {
+
+content = `
+<div class="gallery">
+
+<img src="velvetbred1.jpg">
+<img src="velvetbred2.jpg">
+<img src="velvetbred3.jpg">
+<img src="velvetbred4.jpg">
+<img src="velvetbred5.jpg">
+
+</div>
+
+<h2>Jordan Retro 11 Velvet Bred</h2>
+
+<p><s>$119.990</s> <b>$79.990</b></p>
+
+<p>
+Todas las tallas disponibles del 35 al 44 ✅<br>
+Consulta tu medida en cm 📐
+</p>
+`;
+}
+
+    
+if(product === "flintblue") {
+
+content = `
+<div class="gallery">
+
+<img src="flintblue1.jpg">
+<img src="flintblue2.jpg">
+<img src="flintblue3.jpg">
+<img src="flintblue4.jpg">
+
+</div>
+
+<h2>Jordan Retro 13 Flint Blue</h2>
+
+<p><s>$89.990</s> <b>$69.990</b></p>
+
+<p>
+Todas las tallas disponibles del 39 al 44 ✅<br>
+Consulta tu medida en cm 📐
+</p>
+`;
+}
+
+    
+document.getElementById("modal-content").innerHTML = content
+
+document.getElementById("modal").style.display="block"
+
+}
+
+
+function closeModal(){
+
+document.getElementById("modal").style.display="none"
+
+}
+
+
+function buy(){
+
+window.open("https://www.instagram.com/saytienda/")
+
+}
+
 </script>
 
+
 </body>
+
 </html>
