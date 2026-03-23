@@ -9,14 +9,14 @@
 
 <style>
 
-/* COLORES */
+/* colores */
 
 :root{
 --color-principal:#5ce1e6;
 --color-secundario:#9b5cff;
 }
 
-/* BASE */
+/* base */
 
 body{
 background:#000;
@@ -28,9 +28,11 @@ margin:0;
 /* HEADER */
 
 .navbar{
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
 position:relative;
-text-align:center;
-padding:25px 20px;
 }
 
 .logo{
@@ -58,6 +60,10 @@ transition:.2s;
 transform:scale(1.1);
 }
 
+.header-text{
+text-align:center;
+}
+
 .titulo{
 font-size:32px;
 font-family:'Orbitron',sans-serif;
@@ -68,11 +74,12 @@ background:linear-gradient(90deg,var(--color-principal),var(--color-secundario))
 -webkit-text-fill-color:transparent;
 }
 
-/* TRUST TEXT */
+/* trust text */
 
 .trust-bar{
 margin-top:10px;
 font-size:16px;
+text-align:center;
 }
 
 .trust-bar.small{
@@ -80,15 +87,13 @@ font-size:14px;
 opacity:.8;
 }
 
-/* GRID ZAPATILLAS */
+/* GRID */
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 padding:40px;
-max-width:1400px;
-margin:auto;
 }
 
 /* CARD */
@@ -145,6 +150,42 @@ button:hover{
 opacity:.85;
 }
 
+/* MODAL */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:rgba(0,0,0,.8);
+overflow:auto;
+}
+
+.modal-content{
+background:white;
+color:black;
+max-width:600px;
+margin:40px auto;
+padding:20px;
+border-radius:10px;
+}
+
+.close{
+float:right;
+font-size:25px;
+cursor:pointer;
+}
+
+.gallery img{
+width:100%;
+max-width:500px;
+display:block;
+margin:10px auto;
+border-radius:10px;
+}
+
 </style>
 
 </head>
@@ -160,6 +201,8 @@ opacity:.85;
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
 </a>
 
+<div class="header-text">
+
 <h1 class="titulo">SayTienda</h1>
 
 <div class="trust-bar">
@@ -170,90 +213,9 @@ Desde 2018 · +1400 referencias en historias destacadas de Instagram
 Entrega presencial · Delivery paga al recibir · Envíos a todo Chile
 </div>
 
+</div>
+
 </header>
 
 
 <div class="grid">
-
-<!-- CARD 1 -->
-
-<div class="card">
-<img src="img1.jpg">
-<div class="info">
-<h3>Jordan Retro 1 Black Red</h3>
-<span class="old">$89.990</span>
-<span class="price">$59.990</span>
-<button>Ver producto</button>
-</div>
-</div>
-
-
-<!-- CARD 2 -->
-
-<div class="card">
-<img src="img2.jpg">
-<div class="info">
-<h3>Jordan Retro 1 Black White Gold</h3>
-<span class="old">$89.990</span>
-<span class="price">$69.990</span>
-<button>Ver producto</button>
-</div>
-</div>
-
-
-<!-- CARD 3 -->
-
-<div class="card">
-<img src="img3.jpg">
-<div class="info">
-<h3>Jordan Retro 1 Patent Red</h3>
-<span class="old">$89.990</span>
-<span class="price">$59.990</span>
-<button>Ver producto</button>
-</div>
-</div>
-
-
-<!-- CARD 4 -->
-
-<div class="card">
-<img src="img4.jpg">
-<div class="info">
-<h3>Jordan Retro 1 Space Jam</h3>
-<span class="old">$89.990</span>
-<span class="price">$69.990</span>
-<button>Ver producto</button>
-</div>
-</div>
-
-
-<!-- CARD 5 -->
-
-<div class="card">
-<img src="img5.jpg">
-<div class="info">
-<h3>Jordan Retro 11 Cap And Gown</h3>
-<span class="old">$119.990</span>
-<span class="price">$79.990</span>
-<button>Ver producto</button>
-</div>
-</div>
-
-
-<!-- CARD 6 -->
-
-<div class="card">
-<img src="img6.jpg">
-<div class="info">
-<h3>Jordan Retro 11 Jubilee</h3>
-<span class="old">$89.990</span>
-<span class="price">$79.990</span>
-<button>Ver producto</button>
-</div>
-</div>
-
-
-</div>
-
-</body>
-</html>
