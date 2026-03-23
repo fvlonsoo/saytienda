@@ -15,10 +15,61 @@
             text-align: center;
         }
 
-        /* HEADER */
-        .header {
-            margin-bottom: 30px;
-        }
+       /* NAVBAR / HEADER */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #000;
+    max-width: 1300px;
+    margin: 0 auto 30px auto;
+}
+
+.nav-logo {
+    width: 60px; /* Ajusta el tamaño de tu logo */
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.nav-title {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.nav-title h1 {
+    color: #72d5ed;
+    font-size: 2rem;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.nav-title p {
+    font-size: 0.8rem;
+    color: #ccc;
+    margin: 4px 0;
+}
+
+.nav-social img {
+    width: 35px; /* Tamaño del icono de Instagram */
+    height: 35px;
+    transition: transform 0.3s ease;
+}
+
+.nav-social img:hover {
+    transform: scale(1.1);
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+}
         .header h1 {
             color: #72d5ed;
             font-size: 2.5rem;
@@ -156,10 +207,19 @@
 </head>
 <body>
 
-    <div class="header">
+    <nav class="navbar">
+    <img src="logo.jpg" alt="SayTienda Logo" class="nav-logo"> 
+
+    <div class="nav-title">
         <h1>SayTienda</h1>
         <p>Desde 2018 · +1400 referencias en historias destacadas de Instagram</p>
         <p>Entrega presencial · Delivery paga al recibir · Envíos a todo Chile</p>
+    </div>
+
+    <a href="https://www.instagram.com/saytienda?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="nav-social">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+    </a>
+</nav>
     </div>
 
     <div class="grid">
