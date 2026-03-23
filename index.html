@@ -9,7 +9,7 @@
 
 <style>
 
-/* colores del sitio */
+/* colores */
 
 :root{
 --color-principal:#5ce1e6;
@@ -38,6 +38,8 @@ position:relative;
 .logo{
 position:absolute;
 left:20px;
+top:50%;
+transform:translateY(-50%);
 height:60px;
 }
 
@@ -57,7 +59,11 @@ transition:.2s;
 .instagram-btn img:hover{
 transform:scale(1.1);
 }
-  
+
+.header-text{
+text-align:center;
+}
+
 .titulo{
 font-size:32px;
 font-family:'Orbitron',sans-serif;
@@ -68,7 +74,7 @@ background:linear-gradient(90deg,var(--color-principal),var(--color-secundario))
 -webkit-text-fill-color:transparent;
 }
 
-/* trust bar */
+/* trust text */
 
 .trust-bar{
 margin-top:10px;
@@ -81,7 +87,7 @@ font-size:14px;
 opacity:.8;
 }
 
-/* GRID PRODUCTOS */
+/* GRID */
 
 .grid{
 display:grid;
@@ -95,10 +101,9 @@ padding:40px;
 .card{
 background:#111;
 border-radius:12px;
+overflow:hidden;
 display:flex;
 flex-direction:column;
-overflow:hidden;
-transition:.3s;
 }
 
 .card img{
@@ -187,6 +192,7 @@ border-radius:10px;
 
 <body>
 
+
 <header class="navbar">
 
 <img src="logo.png" class="logo">
@@ -196,7 +202,9 @@ border-radius:10px;
 </a>
 
 <div class="header-text">
+
 <h1 class="titulo">SayTienda</h1>
+
 <div class="trust-bar">
 Desde 2018 · +1400 referencias en historias destacadas de Instagram
 </div>
@@ -211,303 +219,3 @@ Entrega presencial · Delivery paga al recibir · Envíos a todo Chile
 
 
 <div class="grid">
-
-
-<div class="card" onclick="openProduct('blackred')">
-
-<img src="blackred1.jpg">
-
-<div class="info">
-
-<h3>Jordan Retro 1 Black Red</h3>
-
-<span class="old">$89.990</span>
-
-<div class="price">$59.990</div>
-
-<button>Ver producto</button>
-
-</div>
-
-</div>
-
-
-<div class="card" onclick="openProduct('gold')">
-
-<img src="gold1.jpg">
-
-<div class="info">
-
-<h3>Jordan Retro 1 Black White Gold</h3>
-
-<span class="old">$89.990</span>
-
-<div class="price">$69.990</div>
-
-<button>Ver producto</button>
-
-</div>
-
-</div>
-
-
-<div class="card" onclick="openProduct('patent')">
-
-<img src="patent1.jpg">
-
-<div class="info">
-
-<h3>Jordan Retro 1 Patent Red</h3>
-
-<span class="old">$89.990</span>
-
-<div class="price">$59.990</div>
-
-<button>Ver producto</button>
-
-</div>
-
-</div>
-
-
-<div class="card" onclick="openProduct('space')">
-
-<img src="space1.jpg">
-
-<div class="info">
-
-<h3>Jordan Retro 1 Space Jam</h3>
-
-<span class="old">$89.990</span>
-
-<div class="price">$69.990</div>
-
-<button>Ver producto</button>
-
-</div>
-
-</div>
-
-
-<div class="card" onclick="openProduct('capandgown')">
-
-<img src="capandgown1.jpg">
-
-<div class="info">
-
-<h3>Jordan Retro 11 Cap And Gown</h3>
-
-<span class="old">$119.990</span>
-
-<div class="price">$79.990</div>
-
-<button>Ver producto</button>
-
-</div>
-
-</div>
-
-
-<div class="card" onclick="openProduct('jubilee')">
-
-<img src="jubilee1.jpg">
-
-<div class="info">
-
-<h3>Jordan Retro 11 Jubilee</h3>
-
-<span class="old">$89.990</span>
-
-<div class="price">$79.990</div>
-
-<button>Ver producto</button>
-
-</div>
-
-</div>
-
-
-<div class="card" onclick="openProduct('velvetbred')">
-
-<img src="velvetbred1.jpg">
-
-<div class="info">
-
-<h3>Jordan Retro 11 Velvet Bred</h3>
-
-<span class="old">$119.990</span>
-
-<div class="price">$79.990</div>
-
-<button>Ver producto</button>
-
-</div>
-
-</div>
-
-
-<div class="card" onclick="openProduct('flintblue')">
-
-<img src="flintblue1.jpg">
-
-<div class="info">
-
-<h3>Jordan Retro 13 Flint Blue</h3>
-
-<span class="old">$89.990</span>
-
-<div class="price">$69.990</div>
-
-<button>Ver producto</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div id="modal" class="modal">
-
-<div class="modal-content">
-
-<span class="close" onclick="closeModal()">×</span>
-
-<div id="modal-content"></div>
-
-</div>
-
-</div>
-
-
-<script>
-
-function openProduct(product){
-
-let content=""
-
-if(product=="blackred"){
-content=`
-<div class="gallery">
-<img src="blackred1.jpg">
-<img src="blackred2.jpg">
-<img src="blackred3.jpg">
-<img src="blackred4.jpg">
-</div>
-<p>Tallas 40 al 44 disponibles</p>
-<button onclick="buy()">Comprar en Instagram</button>
-`
-}
-
-if(product=="gold"){
-content=`
-<div class="gallery">
-<img src="gold1.jpg">
-<img src="gold2.jpg">
-<img src="gold3.jpg">
-<img src="gold4.jpg">
-</div>
-<p>Tallas 40 al 44 disponibles</p>
-<button onclick="buy()">Comprar en Instagram</button>
-`
-}
-
-if(product=="patent"){
-content=`
-<div class="gallery">
-<img src="patent1.jpg">
-<img src="patent2.jpg">
-<img src="patent3.jpg">
-<img src="patent4.jpg">
-</div>
-<p>Tallas 40 al 44 disponibles</p>
-<button onclick="buy()">Comprar en Instagram</button>
-`
-}
-
-if(product=="space"){
-content=`
-<div class="gallery">
-<img src="space1.jpg">
-<img src="space2.jpg">
-<img src="space3.jpg">
-<img src="space4.jpg">
-<img src="space5.jpg">
-</div>
-<p>Tallas 35 al 44.5 disponibles</p>
-<button onclick="buy()">Comprar en Instagram</button>
-`
-}
-
-if(product=="capandgown"){
-content=`
-<div class="gallery">
-<img src="capandgown1.jpg">
-<img src="capandgown2.jpg">
-<img src="capandgown3.jpg">
-<img src="capandgown4.jpg">
-<img src="capandgown5.jpg">
-</div>
-<p>Tallas 35 al 44 disponibles</p>
-<button onclick="buy()">Comprar en Instagram</button>
-`
-}
-
-if(product=="jubilee"){
-content=`
-<div class="gallery">
-<img src="jubilee1.jpg">
-<img src="jubilee2.jpg">
-<img src="jubilee3.jpg">
-<img src="jubilee4.jpg">
-<img src="jubilee5.jpg">
-</div>
-<p>Tallas 40 al 44 disponibles</p>
-<button onclick="buy()">Comprar en Instagram</button>
-`
-}
-
-if(product=="velvetbred"){
-content=`
-<div class="gallery">
-<img src="velvetbred1.jpg">
-<img src="velvetbred2.jpg">
-<img src="velvetbred3.jpg">
-<img src="velvetbred4.jpg">
-<img src="velvetbred5.jpg">
-</div>
-<p>Tallas 35 al 44 disponibles</p>
-<button onclick="buy()">Comprar en Instagram</button>
-`
-}
-
-if(product=="flintblue"){
-content=`
-<div class="gallery">
-<img src="flintblue1.jpg">
-<img src="flintblue2.jpg">
-<img src="flintblue3.jpg">
-<img src="flintblue4.jpg">
-</div>
-<p>Tallas 39 al 44 disponibles</p>
-<button onclick="buy()">Comprar en Instagram</button>
-`
-}
-
-document.getElementById("modal-content").innerHTML=content
-document.getElementById("modal").style.display="block"
-
-}
-
-function closeModal(){
-document.getElementById("modal").style.display="none"
-}
-
-function buy(){
-window.open("https://www.instagram.com/saytienda/")
-}
-
-</script>
-
-</body>
-</html>
