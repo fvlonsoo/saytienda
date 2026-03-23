@@ -41,6 +41,23 @@ left:20px;
 height:60px;
 }
 
+.instagram-btn{
+position:absolute;
+right:20px;
+top:50%;
+transform:translateY(-50%);
+}
+
+.instagram-btn img{
+height:32px;
+cursor:pointer;
+transition:.2s;
+}
+
+.instagram-btn img:hover{
+transform:scale(1.1);
+}
+  
 .titulo{
 font-size:32px;
 font-family:'Orbitron',sans-serif;
@@ -172,12 +189,16 @@ border-radius:10px;
 
 <header class="navbar">
 
+<header class="navbar">
+
 <img src="logo.png" class="logo">
 
-<div>
+<a href="https://www.instagram.com/saytienda" target="_blank" class="instagram-btn">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+</a>
 
+<div class="header-text">
 <h1 class="titulo">SayTienda</h1>
-
 <div class="trust-bar">
 Desde 2018 · +1400 referencias en historias destacadas de Instagram
 </div>
