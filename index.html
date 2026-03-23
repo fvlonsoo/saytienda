@@ -292,7 +292,60 @@ margin-bottom:10px;
 
 </div>
 
+<div class="card" onclick="openProduct('capandgown')">
+<img src="capandgown1.jpg">
 
+<div class="info">
+<h3>Jordan Retro 11 Cap And Gown</h3>
+
+<p class="old-price">$119.990</p>
+<p class="price">$79.990</p>
+
+<button>Ver producto</button>
+</div>
+</div>
+
+
+<div class="card" onclick="openProduct('jubilee')">
+<img src="jubilee1.jpg">
+
+<div class="info">
+<h3>Jordan Retro 11 Jubilee</h3>
+
+<p class="old-price">$89.990</p>
+<p class="price">$79.990</p>
+
+<button>Ver producto</button>
+</div>
+</div>
+
+
+<div class="card" onclick="openProduct('velvetbred')">
+<img src="velvetbred1.jpg">
+
+<div class="info">
+<h3>Jordan Retro 11 Velvet Bred</h3>
+
+<p class="old-price">$119.990</p>
+<p class="price">$79.990</p>
+
+<button>Ver producto</button>
+</div>
+</div>
+
+
+<div class="card" onclick="openProduct('flintblue')">
+<img src="flintblue1.jpg">
+
+<div class="info">
+<h3>Jordan Retro 13 Flint Blue</h3>
+
+<p class="old-price">$89.990</p>
+<p class="price">$69.990</p>
+
+<button>Ver producto</button>
+</div>
+</div>
 
 <script>
 
@@ -388,7 +441,106 @@ content=`
 
 }
 
+    
+if(product === "capandgown") {
 
+content = `
+<div class="gallery">
+
+<img src="capandgown1.jpg">
+<img src="capandgown2.jpg">
+<img src="capandgown3.jpg">
+<img src="capandgown4.jpg">
+<img src="capandgown5.jpg">
+
+</div>
+
+<h2>Jordan Retro 11 Cap And Gown</h2>
+
+<p><s>$119.990</s> <b>$79.990</b></p>
+
+<p>
+Todas las tallas disponibles del 35 al 44 ✅<br>
+Consulta tu medida en cm 📐
+</p>
+`;
+}
+
+    
+if(product === "jubilee") {
+
+content = `
+<div class="gallery">
+
+<img src="jubilee1.jpg">
+<img src="jubilee2.jpg">
+<img src="jubilee3.jpg">
+<img src="jubilee4.jpg">
+<img src="jubilee5.jpg">
+
+</div>
+
+<h2>Jordan Retro 11 Jubilee</h2>
+
+<p><s>$89.990</s> <b>$79.990</b></p>
+
+<p>
+Todas las tallas disponibles del 40 al 44 ✅<br>
+Consulta tu medida en cm 📐
+</p>
+`;
+}
+
+    
+if(product === "velvetbred") {
+
+content = `
+<div class="gallery">
+
+<img src="velvetbred1.jpg">
+<img src="velvetbred2.jpg">
+<img src="velvetbred3.jpg">
+<img src="velvetbred4.jpg">
+<img src="velvetbred5.jpg">
+
+</div>
+
+<h2>Jordan Retro 11 Velvet Bred</h2>
+
+<p><s>$119.990</s> <b>$79.990</b></p>
+
+<p>
+Todas las tallas disponibles del 35 al 44 ✅<br>
+Consulta tu medida en cm 📐
+</p>
+`;
+}
+
+    
+if(product === "flintblue") {
+
+content = `
+<div class="gallery">
+
+<img src="flintblue1.jpg">
+<img src="flintblue2.jpg">
+<img src="flintblue3.jpg">
+<img src="flintblue4.jpg">
+
+</div>
+
+<h2>Jordan Retro 13 Flint Blue</h2>
+
+<p><s>$89.990</s> <b>$69.990</b></p>
+
+<p>
+Todas las tallas disponibles del 39 al 44 ✅<br>
+Consulta tu medida en cm 📐
+</p>
+`;
+}
+
+    
 document.getElementById("product-content").innerHTML=content
 
 document.getElementById("modal").style.display="block"
