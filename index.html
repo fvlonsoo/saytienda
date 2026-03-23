@@ -6,16 +6,37 @@
 
 <style>
 
-body{
-font-family:Arial;
-margin:0;
-background:#f5f5f5;
+:root {
+    --color-principal: #5ce1e6;
+    --color-secundario: #9b5cff;
 }
 
-header{
+body {
+    background-color: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.navbar{
+display:flex;
+align-items:center;
+justify-content:center;
 background:black;
 padding:20px;
-text-align:center;
+position:relative;
+}
+
+.logo{
+position:absolute;
+left:20px;
+height:60px;
+}
+
+.titulo{
+font-size:28px;
+background: linear-gradient(90deg, var(--color-principal), var(--color-secundario));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 
 header img{
@@ -29,17 +50,16 @@ gap:25px;
 padding:40px;
 }
 
-.card{
-background:white;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-overflow:hidden;
-cursor:pointer;
-transition:.3s;
+.card button {
+    background: linear-gradient(90deg, #5ce1e6, #9b5cff);
+    color: white;
+    border: none;
 }
 
-.card:hover{
-transform:scale(1.03);
+.card{
+background:#111;
+border-radius:12px;
+transition:0.3s;
 }
 
 .card img{
@@ -111,7 +131,13 @@ margin-bottom:10px;
 
 <body>
 
-<header>
+<header class="navbar">
+
+    <img src="logo.png" class="logo">
+
+    <h1 class="titulo">SayTienda</h1>
+
+</header>
 
 <img src="logo.png">
 
