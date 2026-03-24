@@ -62,12 +62,32 @@
     transform: scale(1.1);
 }
 
-/* Ajuste para móviles */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        gap: 15px;
+/* AJUSTE PARA CELULARES: 2 COLUMNAS */
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr) !important; /* Fuerza las 2 columnas */
+        gap: 10px; /* Reduce un poco el espacio entre fotos */
         padding: 10px;
+    }
+
+    .navbar {
+        flex-direction: row !important; /* Mantiene logo e instagram en la misma linea */
+        padding: 10px;
+        justify-content: space-between;
+    }
+
+    .nav-title h1 {
+        font-size: 1.2rem; /* Achica un poco el titulo para que quepa */
+    }
+
+    .nav-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .info h3 {
+        font-size: 0.85rem; /* Letra un poco más chica para que no se desordene */
+        height: 35px;
     }
 }
         .header h1 {
