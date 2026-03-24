@@ -342,6 +342,26 @@
                 <button>Ver producto</button>
             </div>
         </div>
+
+        <div class="card" onclick="openProduct('racerblue')">
+            <img src="racerblue1.jpg">
+            <div class="info">
+                <h3>Jordan Retro 5 Racer Blue</h3>
+                <span class="old">$89.990</span>
+                <div class="price">$69.990</div>
+                <button>Ver producto</button>
+            </div>
+        </div>
+
+        <div class="card" onclick="openProduct('chrome')">
+            <img src="chrome1.jpg">
+            <div class="info">
+                <h3>Jordan Retro 6 Chrome Silver</h3>
+                <span class="old">$89.990</span>
+                <div class="price">$69.990</div>
+                <button>Ver producto</button>
+            </div>
+        </div>
     </div>
 
     <div id="modal" class="modal">
@@ -417,6 +437,18 @@ function openProduct(product) {
         prices = "<s>$89.990</s> <b style='color:#ff3333'>$59.990</b>";
         details = "Tallas 38/39 disponibles ✅";
         images = ["military1.jpg", "military2.jpg", "military3.jpg", "military4.jpg"];
+    }
+    else if (product == 'racerblue') {
+        title = "Jordan Retro 5 Racer Blue";
+        prices = "<s>$89.990</s> <b style='color:#ff3333'>$69.990</b>";
+        details = "Tallas 39 al 44 disponibles ✅";
+        images = ["racerblue1.jpg", "racerblue2.jpg", "racerblue3.jpg", "racerblue4.jpg", "racerblue5.jpg", "racerblue6.jpg"];
+    }
+    else if (product == 'chrome') {
+        title = "Jordan Retro 6 Chrome Metallic Silver";
+        prices = "<s>$89.990</s> <b style='color:#ff3333'>$69.990</b>";
+        details = "Tallas 39 al 44 disponibles ✅";
+        images = ["chrome1.jpg", "chrome2.jpg", "chrome3.jpg", "chrome4.jpg"];
     }
 
     let content = `
